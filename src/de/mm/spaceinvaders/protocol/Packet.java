@@ -1,6 +1,6 @@
 package de.mm.spaceinvaders.protocol;
 
-import de.mm.spaceinvaders.server.netty.PacketHandler;
+import de.mm.spaceinvaders.io.PacketHandler;
 import io.netty.buffer.ByteBuf;
 
 public abstract class Packet

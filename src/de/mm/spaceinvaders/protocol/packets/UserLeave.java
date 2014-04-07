@@ -12,24 +12,21 @@ import de.mm.spaceinvaders.protocol.Packet;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class Login extends Packet
+public class UserLeave extends Packet
 {
 
 	private String name;
-	private int version;
 
 	@Override
 	public void read(ByteBuf buf)
 	{
 		this.name = readString(buf);
-		this.version = buf.readInt();
 	}
 
 	@Override
 	public void write(ByteBuf buf)
 	{
 		writeString(buf, name);
-		buf.writeInt(version);
 	}
 
 	@Override

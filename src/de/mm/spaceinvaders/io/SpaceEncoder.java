@@ -1,4 +1,4 @@
-package de.mm.spaceinvaders.server.netty;
+package de.mm.spaceinvaders.io;
 
 import de.mm.spaceinvaders.protocol.Packet;
 import de.mm.spaceinvaders.protocol.Protocol;
