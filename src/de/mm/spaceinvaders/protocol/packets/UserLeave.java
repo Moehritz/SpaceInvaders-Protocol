@@ -15,18 +15,18 @@ import de.mm.spaceinvaders.protocol.Packet;
 public class UserLeave extends Packet
 {
 
-	private String name;
+	private String uuid;
 
 	@Override
 	public void read(ByteBuf buf)
 	{
-		this.name = readString(buf);
+		this.uuid = readString(buf);
 	}
 
 	@Override
 	public void write(ByteBuf buf)
 	{
-		writeString(buf, name);
+		writeString(buf, uuid);
 	}
 
 	@Override

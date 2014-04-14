@@ -6,7 +6,9 @@ import java.util.Map.Entry;
 
 import de.mm.spaceinvaders.protocol.packets.ChangeName;
 import de.mm.spaceinvaders.protocol.packets.ChatMessage;
+import de.mm.spaceinvaders.protocol.packets.GameStart;
 import de.mm.spaceinvaders.protocol.packets.Login;
+import de.mm.spaceinvaders.protocol.packets.UpdatePosition;
 import de.mm.spaceinvaders.protocol.packets.UserJoin;
 import de.mm.spaceinvaders.protocol.packets.UserLeave;
 
@@ -14,7 +16,7 @@ public class Protocol
 {
 
 	public static int PROTOCOL_VERSION = 1;
-	
+
 	public static Protocol prot;
 
 	private Map<Integer, Class<? extends Packet>> packets = new HashMap<>();
@@ -28,6 +30,8 @@ public class Protocol
 		packets.put(2, ChangeName.class);
 		packets.put(3, UserJoin.class);
 		packets.put(4, UserLeave.class);
+		packets.put(5, UpdatePosition.class);
+		packets.put(6, GameStart.class);
 	}
 
 	public Packet createPacket(int id)

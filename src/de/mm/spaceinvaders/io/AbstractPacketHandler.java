@@ -2,7 +2,11 @@ package de.mm.spaceinvaders.io;
 
 import de.mm.spaceinvaders.protocol.packets.ChangeName;
 import de.mm.spaceinvaders.protocol.packets.ChatMessage;
+import de.mm.spaceinvaders.protocol.packets.GameStart;
 import de.mm.spaceinvaders.protocol.packets.Login;
+import de.mm.spaceinvaders.protocol.packets.UpdatePosition;
+import de.mm.spaceinvaders.protocol.packets.UserJoin;
+import de.mm.spaceinvaders.protocol.packets.UserLeave;
 
 public abstract class AbstractPacketHandler
 {
@@ -16,6 +20,22 @@ public abstract class AbstractPacketHandler
 	}
 
 	public void handle(ChangeName changeName) throws Exception
+	{
+	}
+
+	public void handle(UserJoin join) throws Exception
+	{
+	}
+
+	public void handle(UserLeave leave) throws Exception
+	{
+	}
+
+	public void handle(UpdatePosition pos) throws Exception
+	{
+	}
+
+	public void handle(GameStart start) throws Exception
 	{
 	}
 

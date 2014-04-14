@@ -1,10 +1,10 @@
 package de.mm.spaceinvaders.protocol.packets;
 
+import io.netty.buffer.ByteBuf;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import io.netty.buffer.ByteBuf;
 import de.mm.spaceinvaders.io.PacketHandler;
 import de.mm.spaceinvaders.protocol.Packet;
 
@@ -12,26 +12,28 @@ import de.mm.spaceinvaders.protocol.Packet;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class Login extends Packet
+public class UpdatePosition extends Packet
 {
-
-	private String name, uuid;
-	private int version;
+	private String uuid;
+	private float x, y;
+	private double rotation;
 
 	@Override
 	public void read(ByteBuf buf)
 	{
-		this.name = readString(buf);
 		this.uuid = readString(buf);
-		this.version = buf.readInt();
+		this.x = buf.readFloat();
+		this.y = buf.readFloat();
+		this.rotation = buf.readDouble();
 	}
 
 	@Override
 	public void write(ByteBuf buf)
 	{
-		writeString(buf, name);
 		writeString(buf, uuid);
-		buf.writeInt(version);
+		buf.writeFloat(x);
+		buf.writeFloat(x);
+		buf.writeDouble(rotation);
 	}
 
 	@Override
