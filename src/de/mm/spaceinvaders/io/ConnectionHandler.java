@@ -12,8 +12,9 @@ public class ConnectionHandler extends ChannelHandlerAdapter
 
 	private final Channel ch;
 	private final PacketHandler handler;
-	
-	public ConnectionHandler(Channel ch, PacketHandler handler) {
+
+	public ConnectionHandler(Channel ch, PacketHandler handler)
+	{
 		this.ch = ch;
 		this.handler = handler;
 		handler.setConnection(this);
@@ -25,14 +26,7 @@ public class ConnectionHandler extends ChannelHandlerAdapter
 		{
 			return;
 		}
-		try
-		{
-			ch.close().await();
-		}
-		catch (InterruptedException e)
-		{
-			e.printStackTrace();
-		}
+		ch.close();
 	}
 
 	public void write(Packet... packets)
@@ -52,7 +46,7 @@ public class ConnectionHandler extends ChannelHandlerAdapter
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx) throws Exception
 	{
-		// TODO
+		handler.disconnected();
 	}
 
 	@Override
@@ -73,7 +67,7 @@ public class ConnectionHandler extends ChannelHandlerAdapter
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
 			throws Exception
 	{
-		System.out.println("Exception: " + cause.getMessage());
+		handler.disconnected();
 		cause.printStackTrace();
 	}
 }
