@@ -5,6 +5,7 @@ import java.util.List;
 import de.mm.spaceinvaders.protocol.Packet;
 import de.mm.spaceinvaders.protocol.PacketWrapper;
 import de.mm.spaceinvaders.protocol.Protocol;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
