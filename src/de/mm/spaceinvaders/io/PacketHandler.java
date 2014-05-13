@@ -7,7 +7,7 @@ import de.mm.spaceinvaders.protocol.Packet;
 
 public abstract class PacketHandler extends AbstractPacketHandler
 {
-	
+
 	@NonNull
 	@Getter
 	@Setter

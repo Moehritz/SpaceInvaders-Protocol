@@ -8,6 +8,7 @@ import de.mm.spaceinvaders.protocol.packets.ChangeName;
 import de.mm.spaceinvaders.protocol.packets.ChatMessage;
 import de.mm.spaceinvaders.protocol.packets.GameStart;
 import de.mm.spaceinvaders.protocol.packets.Login;
+import de.mm.spaceinvaders.protocol.packets.UpdatePlayerName;
 import de.mm.spaceinvaders.protocol.packets.UpdatePosition;
 import de.mm.spaceinvaders.protocol.packets.UserJoin;
 import de.mm.spaceinvaders.protocol.packets.UserLeave;
@@ -32,6 +33,7 @@ public class Protocol
 		packets.put(4, UserLeave.class);
 		packets.put(5, UpdatePosition.class);
 		packets.put(6, GameStart.class);
+		packets.put(7, UpdatePlayerName.class);
 	}
 
 	public Packet createPacket(int id)

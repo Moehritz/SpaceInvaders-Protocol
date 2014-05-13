@@ -2,7 +2,6 @@ package de.mm.spaceinvaders.io;
 
 import de.mm.spaceinvaders.protocol.Packet;
 import de.mm.spaceinvaders.protocol.PacketWrapper;
-
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
@@ -20,7 +19,7 @@ public class ConnectionHandler extends ChannelHandlerAdapter
 		handler.setConnection(this);
 	}
 
-	public void close()
+	public void closeConnection()
 	{
 		if (ch == null || !ch.isOpen())
 		{
@@ -29,12 +28,13 @@ public class ConnectionHandler extends ChannelHandlerAdapter
 		ch.close();
 	}
 
-	public void write(Packet... packets)
+	public void sendPackets(Packet... packets)
 	{
-		for (Packet p : packets)
+		for (final Packet p : packets)
 		{
-			ch.writeAndFlush(p);
+			ch.write(p);
 		}
+		ch.flush();
 	}
 
 	@Override
