@@ -67,7 +67,7 @@ public class ConnectionHandler extends ChannelHandlerAdapter
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
 			throws Exception
 	{
-		handler.disconnected();
 		cause.printStackTrace();
+		handler.disconnected();
 	}
 }

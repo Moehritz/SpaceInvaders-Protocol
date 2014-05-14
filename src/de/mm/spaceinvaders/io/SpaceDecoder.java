@@ -27,6 +27,8 @@ public class SpaceDecoder extends ByteToMessageDecoder
 
 		packet.read(buf);
 
+		System.out.println("GET - " + packet.getClass().getName());
+
 		out.add(new PacketWrapper(packet, buf));
 	}
 }
