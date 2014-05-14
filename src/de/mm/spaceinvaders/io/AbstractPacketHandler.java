@@ -57,7 +57,7 @@ public abstract class AbstractPacketHandler
 
 	public void handle(Respawn respawn) throws Exception
 	{
-		
+
 	}
 
 }
