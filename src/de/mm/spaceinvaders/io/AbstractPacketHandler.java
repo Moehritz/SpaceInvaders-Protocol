@@ -6,6 +6,7 @@ import de.mm.spaceinvaders.protocol.packets.GameStart;
 import de.mm.spaceinvaders.protocol.packets.JoinGame;
 import de.mm.spaceinvaders.protocol.packets.Login;
 import de.mm.spaceinvaders.protocol.packets.ResetGame;
+import de.mm.spaceinvaders.protocol.packets.Respawn;
 import de.mm.spaceinvaders.protocol.packets.UpdatePlayerName;
 import de.mm.spaceinvaders.protocol.packets.UpdatePosition;
 import de.mm.spaceinvaders.protocol.packets.UserJoin;
@@ -52,6 +53,11 @@ public abstract class AbstractPacketHandler
 
 	public void handle(JoinGame game) throws Exception
 	{
+	}
+
+	public void handle(Respawn respawn) throws Exception
+	{
+		
 	}
 
 }

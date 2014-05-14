@@ -17,9 +17,6 @@ public class SpaceEncoder extends MessageToByteEncoder<Packet>
 	{
 		out.writeInt(Protocol.prot.getPacketId(p.getClass()));
 		p.write(out);
-		
-
-		System.out.println("OUT - " + p.getClass().getName());
 	}
 
 }

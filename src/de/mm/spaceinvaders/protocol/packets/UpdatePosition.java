@@ -35,7 +35,7 @@ public class UpdatePosition extends Packet
 	{
 		writeString(buf, uuid);
 		buf.writeFloat(x);
-		buf.writeFloat(x);
+		buf.writeFloat(y);
 		buf.writeDouble(rotation);
 		buf.writeDouble(speed.getX());
 		buf.writeDouble(speed.getY());
