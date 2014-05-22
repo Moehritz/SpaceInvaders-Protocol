@@ -16,7 +16,7 @@ import de.mm.spaceinvaders.util.Vector;
 public class UpdatePosition extends Packet
 {
 	private String uuid;
-	private float x, y;
+	private double x, y;
 	private double rotation;
 	private Vector speed;
 
@@ -24,8 +24,8 @@ public class UpdatePosition extends Packet
 	public void read(ByteBuf buf)
 	{
 		this.uuid = readString(buf);
-		this.x = buf.readFloat();
-		this.y = buf.readFloat();
+		this.x = buf.readDouble();
+		this.y = buf.readDouble();
 		this.rotation = buf.readDouble();
 		this.speed = new Vector(buf.readDouble(), buf.readDouble());
 	}
@@ -34,8 +34,8 @@ public class UpdatePosition extends Packet
 	public void write(ByteBuf buf)
 	{
 		writeString(buf, uuid);
-		buf.writeFloat(x);
-		buf.writeFloat(y);
+		buf.writeDouble(x);
+		buf.writeDouble(y);
 		buf.writeDouble(rotation);
 		buf.writeDouble(speed.getX());
 		buf.writeDouble(speed.getY());

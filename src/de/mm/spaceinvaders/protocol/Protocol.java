@@ -6,11 +6,13 @@ import java.util.Map.Entry;
 
 import de.mm.spaceinvaders.protocol.packets.ChangeName;
 import de.mm.spaceinvaders.protocol.packets.ChatMessage;
+import de.mm.spaceinvaders.protocol.packets.DespawnEntity;
 import de.mm.spaceinvaders.protocol.packets.GameStart;
-import de.mm.spaceinvaders.protocol.packets.JoinGame;
 import de.mm.spaceinvaders.protocol.packets.Login;
 import de.mm.spaceinvaders.protocol.packets.ResetGame;
 import de.mm.spaceinvaders.protocol.packets.Respawn;
+import de.mm.spaceinvaders.protocol.packets.ShootProjectile;
+import de.mm.spaceinvaders.protocol.packets.SpawnEntity;
 import de.mm.spaceinvaders.protocol.packets.UpdatePlayerName;
 import de.mm.spaceinvaders.protocol.packets.UpdatePosition;
 import de.mm.spaceinvaders.protocol.packets.UserJoin;
@@ -38,8 +40,10 @@ public class Protocol
 		packets.put(6, GameStart.class);
 		packets.put(7, UpdatePlayerName.class);
 		packets.put(8, ResetGame.class);
-		packets.put(9, JoinGame.class);
+		packets.put(9, SpawnEntity.class);
 		packets.put(10, Respawn.class);
+		packets.put(11, ShootProjectile.class);
+		packets.put(12, DespawnEntity.class);
 	}
 
 	public Packet createPacket(int id)

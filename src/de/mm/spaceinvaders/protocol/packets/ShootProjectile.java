@@ -1,19 +1,20 @@
 package de.mm.spaceinvaders.protocol.packets;
 
 import io.netty.buffer.ByteBuf;
-import de.mm.spaceinvaders.io.PacketHandler;
-import de.mm.spaceinvaders.protocol.Packet;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import de.mm.spaceinvaders.io.PacketHandler;
+import de.mm.spaceinvaders.protocol.Packet;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class Respawn extends Packet
+public class ShootProjectile extends Packet
 {
+
 	private double x, y;
 	private double rotation;
 
@@ -38,4 +39,5 @@ public class Respawn extends Packet
 	{
 		handler.handle(this);
 	}
+
 }

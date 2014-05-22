@@ -9,24 +9,35 @@ import de.mm.spaceinvaders.io.PacketHandler;
 import de.mm.spaceinvaders.protocol.Packet;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class JoinGame extends Packet
+public class SpawnEntity extends Packet
 {
 
 	private String uuid;
+	private double x, y;
+	private double rotation;
+	private byte type;
 
 	@Override
 	public void read(ByteBuf buf)
 	{
 		this.uuid = readString(buf);
+		this.x = buf.readDouble();
+		this.y = buf.readDouble();
+		this.rotation = buf.readDouble();
+		this.type = buf.readByte();
 	}
 
 	@Override
 	public void write(ByteBuf buf)
 	{
 		writeString(buf, uuid);
+		buf.writeDouble(x);
+		buf.writeDouble(x);
+		buf.writeDouble(rotation);
+		buf.writeByte(type);
 	}
 
 	@Override
