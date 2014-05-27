@@ -35,7 +35,7 @@ public class SpawnEntity extends Packet
 	{
 		writeString(buf, uuid);
 		buf.writeDouble(x);
-		buf.writeDouble(x);
+		buf.writeDouble(y);
 		buf.writeDouble(rotation);
 		buf.writeByte(type);
 	}

@@ -30,7 +30,7 @@ public class ShootProjectile extends Packet
 	public void write(ByteBuf buf)
 	{
 		buf.writeDouble(x);
-		buf.writeDouble(x);
+		buf.writeDouble(y);
 		buf.writeDouble(rotation);
 	}
 
